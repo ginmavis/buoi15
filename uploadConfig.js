@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
 });
 
 // giới hạn kích thước file
-const limits = { fileSize: 1024000 };
+const limits = { fileSize: 10240000 };
 // dest : chỉ cho phép lưu ở đâu
 // const upload = multer({ dest: './public' });
 

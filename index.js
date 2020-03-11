@@ -15,6 +15,13 @@ app.get('/', (req, res) => {
       .then(products => res.render('index', { products }))
       .catch(err => res.send(err.message))
 })
+
+app.get('/remove/:id', (req, res) => {
+   const { id } = req.params
+   Product.findOneAndDelete({ _id: id })
+      .then(() => res.redirect('/'))
+      .catch(err => res.send(err.message))
+})
 app.get('/add', (req, res) => res.render('add'))
 
 app.post('/add', upload.single('image'), (req, res) => {

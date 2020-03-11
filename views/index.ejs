@@ -17,7 +17,7 @@
     <h3>words </h3>
 
 
-    <button class="btn btn-success" onclick="window.open('/add', '_blank ')">Add new</button>
+    <button class="btn btn-success" onclick="window.open('/add', '_self ')">Add new</button>
 
     <br>
     <table border="1 " style="border-collapse:collapse;text-align: center; " cellpadding="15 ">
@@ -52,6 +52,17 @@
                     <a href="/remove/<%=e._id%>">Xóa</a>
                     <a href="/edit/<%=e._id%>">Sửa</a>
                 </td>
+                <td>
+
+                    <!-- đường dẫn đẫ được cài theo upload congif -->
+                    <img class="thumb" src="./<%= e.image %>" alt="" width="300px" height="300px">
+
+                </td>
+                <td>
+                    <iframe src="<%= e.video %>" width="300" height="225" frameborder="0"></iframe>
+
+                </td>
+
                 <%});%>
             </tr>
     </table>
